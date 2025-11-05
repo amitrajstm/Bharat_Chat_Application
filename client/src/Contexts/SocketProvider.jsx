@@ -10,8 +10,7 @@ export const SocketProvider = ({ children }) => {
     const [currUser] = useRecoilState(userData);
     
     useEffect(() => {
-        const newSocket = io('http://localhost:3000');
-        // const newSocket = io('https://gappe.onrender.com');
+        const newSocket = io(`${import.meta.env.VITE_SERVER_URL}`);
         setSocket(newSocket);
  
       if(!newSocket) return;

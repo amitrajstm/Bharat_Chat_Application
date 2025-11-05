@@ -30,7 +30,7 @@ const ForgotPass = () => {
         e.preventDefault();
         setLoading(true);
         try {
-            const res = await axios.post('http://localhost:3000/api/user/forgotpass', {
+            const res = await axios.post(`${import.meta.env.VITE_SERVER_URL}/api/user/forgotpass`, {
                 ...data
             })
             toast.success(res?.data?.message || 'Success');
